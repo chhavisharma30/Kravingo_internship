@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="351dp"
-        android:layout_height="wrap_content"
+        android:layout_width="251dp"
+        android:layout_height="28dp"
         android:layout_margin="20dp"
         android:text="Fill Your Profile"
         android:textSize="25sp"
@@ -162,6 +162,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        app:tint="#FD788C"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_baseline_keyboard_backspace_24" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

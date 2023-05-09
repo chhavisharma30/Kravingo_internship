@@ -1,5 +1,9 @@
 
-
 <resources>
     <string name="app_name">Dating App</string>
+    <string name="tv2">Full Name<font color='#FF0000'>*</font></string>
+    <string name="tv3">Email<font color='#FF0000'>*</font></string>
+    <string name="tv4">Phone Number<font color='#FF0000'>*</font></string>
+    <string name="tv5">Gender<font color='#FF0000'>*</font></string>
+    <string name="tv6">Location<font color='#FF0000'>*</font></string>
 </resources>

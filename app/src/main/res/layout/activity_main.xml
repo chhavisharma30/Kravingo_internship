@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="251dp"
         android:layout_height="28dp"
-        android:layout_margin="20dp"
+        android:layout_margin="50dp"
         android:textColor="#000000"
         android:text="Fill Your Profile"
         android:textSize="25sp"
@@ -91,6 +91,7 @@
         android:layout_margin="10dp"
         android:ems="10"
         android:hint="Email"
+        android:drawableEnd="@drawable/ic_baseline_email_24"
         android:background="@drawable/edit_text_border"
         android:padding="10dp"
         android:inputType="textEmailAddress"
@@ -117,6 +118,7 @@
         android:ems="10"
         android:layout_margin="10dp"
         android:hint="Phone number"
+        android:drawableEnd="@drawable/ic_baseline_local_phone_24"
         android:background="@drawable/edit_text_border"
         android:padding="10dp"
         android:inputType="phone"
@@ -158,7 +160,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/et6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -166,7 +168,8 @@
         android:inputType="textPersonName"
         android:background="@drawable/edit_text_border"
         android:padding="10dp"
-        android:hint="Name"
+        android:hint="Location"
+        android:drawableEnd="@drawable/ic_baseline_location_on_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -178,28 +181,27 @@
         android:padding="10dp"
         android:layout_margin="20dp"
         android:text="Continue"
-        android:backgroundTint="#FD788C"
+        android:background="@drawable/button_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/et6" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:clickable="true"
-        android:background="@null"
         android:outlineProvider="none"
         app:backgroundTint="@android:color/transparent"
-        app:tint="#FD788C"
+        app:layout_constraintBottom_toTopOf="@+id/profile_image"
         app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.795"
+        app:tint="#FD788C"
         tools:srcCompat="@drawable/ic_baseline_arrow_back_24" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

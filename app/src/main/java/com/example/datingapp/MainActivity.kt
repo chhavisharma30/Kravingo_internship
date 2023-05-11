@@ -1,19 +1,34 @@
 package com.example.datingapp
 
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.EditText
+import android.widget.*
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        private const val PICK_IMAGE_REQUEST = 1
+    }
+
+    private var galleryLauncher: ActivityResultLauncher<String>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,7 +58,23 @@ class MainActivity : AppCompatActivity() {
         setUpEditText(edittext1)
         setUpEditText(edittext2)
         setUpEditText(edittext3)
+
+        //implementing fab to set profile picture
+        fab2.setOnClickListener {
+            galleryLauncher?.launch("image/*")
+        }
+
+        // Create the gallery launcher
+        galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+            uri?.let {
+                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
+
+                // Do something with the bitmap, such as set it as the user's profile picture
+            }
+        }
+
     }
+
 
     private fun setUpEditText(editText: EditText) {
         editText.addTextChangedListener(object : TextWatcher {

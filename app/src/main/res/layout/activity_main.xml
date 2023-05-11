@@ -143,6 +143,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:padding="10dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+        android:entries="@array/gender_options"
         android:background="@drawable/edit_text_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

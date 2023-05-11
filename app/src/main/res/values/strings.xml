@@ -6,4 +6,11 @@
     <string name="tv4">Phone Number<font color='#FF0000'>*</font></string>
     <string name="tv5">Gender<font color='#FF0000'>*</font></string>
     <string name="tv6">Location<font color='#FF0000'>*</font></string>
+    <string name="Gender">Gender</string>
+    <string name="gender">Gender</string>
+    <string-array name="gender_options">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
 </resources>

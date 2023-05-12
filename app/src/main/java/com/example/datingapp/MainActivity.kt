@@ -1,7 +1,10 @@
 package com.example.datingapp
 
+import CustomSpinnerAdapter
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.PorterDuff
 import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +12,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +24,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private var galleryLauncher: ActivityResultLauncher<String>? = null
+    private var selectedImageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,35 +47,49 @@ class MainActivity : AppCompatActivity() {
         windowInsetsController?.isAppearanceLightStatusBars=true
 
         //setting vector icons of floating action button
-        val fab = findViewById<FloatingActionButton>(R.id.floatingActionButton2)
         val myIcon = resources.getDrawable(R.drawable.ic_baseline_arrow_back_24)
-        fab.setImageDrawable(myIcon)
+        floatingActionButton2.setImageDrawable(myIcon)
 
-        val fab2 = findViewById<FloatingActionButton>(R.id.floatingActionButton)
         val myIcon2 = resources.getDrawable(R.drawable.ic_baseline_edit_24)
-        fab2.setImageDrawable(myIcon2)
+        floatingActionButton.setImageDrawable(myIcon2)
 
         //customizing borders of edittext
-        val edittext1 = findViewById<EditText>(R.id.et2)
-        val edittext2 = findViewById<EditText>(R.id.et3)
-        val edittext3 = findViewById<EditText>(R.id.et4)
-
-
-        setUpEditText(edittext1)
-        setUpEditText(edittext2)
-        setUpEditText(edittext3)
+        setUpEditText(et2)
+        setUpEditText(et3)
+        setUpEditText(et4)
+        setUpEditText(et6)
 
         //implementing fab to set profile picture
-        fab2.setOnClickListener {
+        floatingActionButton.setOnClickListener {
             galleryLauncher?.launch("image/*")
         }
 
         // Create the gallery launcher
         galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
-            uri?.let {
-                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
+            if (uri != null) {
+                selectedImageUri = uri
+                profile_image.setImageURI(selectedImageUri)
+            }
+        }
 
-                // Do something with the bitmap, such as set it as the user's profile picture
+        //Spinner Items
+        val items = listOf("Gender","Male","Female","Other")
+
+        // Defining the adapter for the Spinner
+        val adapter = CustomSpinnerAdapter(this, items)
+
+        // Set the adapter for the Spinner
+        spinner.adapter = adapter
+
+        //to change color of border of Spinner
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                // Change the border color
+                spinner.background.setColorFilter(ContextCompat.getColor(this@MainActivity, R.color.cherry), PorterDuff.Mode.SRC_ATOP)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Do nothing
             }
         }
 

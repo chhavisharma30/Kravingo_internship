@@ -93,6 +93,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //implementing continue button
+        button.setOnClickListener{
+            val intent = Intent(this@MainActivity,AddBestPhotos::class.java)
+            startActivity(intent)
+        }
+
     }
 
 

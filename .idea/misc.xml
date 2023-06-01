@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/drawable/button_shape.xml" value="0.2265" />
+        <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/drawable/circle_background.xml" value="0.2225" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/drawable/edit_text_border.xml" value="0.2265" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/drawable/edit_text_border_pink.xml" value="0.2265" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/drawable/edit_text_resource_pink.xml" value="0.2265" />
@@ -19,8 +20,10 @@
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/layout/activity_inbox.xml" value="0.264" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/layout/activity_select_your_interest.xml" value="0.264" />
+        <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/layout/custom_search_view.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/layout/custom_spinner_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/layout/item_profile.xml" value="0.253125" />
+        <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/layout/recycler_view_item.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/layout/spinner_hint.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/layout/spinner_item.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/chhav/AndroidStudioProjects/DatingApp/app/src/main/res/layout/spinner_item_dropdown.xml" value="0.18984375" />

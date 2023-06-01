@@ -1,11 +1,8 @@
 package com.example.datingapp
 
-import ProfileAdapter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_inbox.*
 
 class Inbox : AppCompatActivity() {

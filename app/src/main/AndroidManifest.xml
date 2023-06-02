@@ -16,6 +16,9 @@
         android:theme="@style/Theme.DatingApp"
         tools:targetApi="31">
         <activity
+            android:name=".Chat"
+            android:exported="false" />
+        <activity
             android:name=".Inbox"
             android:exported="false" />
         <activity

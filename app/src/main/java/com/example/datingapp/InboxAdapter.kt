@@ -9,13 +9,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class InboxAdapter(private val matchList : ArrayList<UserModel>, private val context : Context):
+class InboxAdapter(private val matchList : ArrayList<MatchModel>, private val context : Context):
     RecyclerView.Adapter<InboxAdapter.ViewHolder>() {
 
         inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
             private val matchName : TextView = itemView.findViewById(R.id.nameTextView)
             private val matchProfilePicture : ImageView = itemView.findViewById(R.id.profileImageView)
-            fun bindData(matchDetails : UserModel) {
+            fun bindData(matchDetails : MatchModel) {
                 matchName.text = matchDetails.userName
                 // TODO use glide to set image from URL later
                 if (matchDetails.userProfilePicture != null) {

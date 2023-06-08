@@ -62,15 +62,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        //Spinner Items
-        val items = listOf("Gender","Male","Female","Other")
-
-        // Defining the adapter for the Spinner
-        val adapter = CustomSpinnerAdapter(this, items)
-
-        // Set the adapter for the Spinner
-        spinner.adapter = adapter
-
         //to change color of border of Spinner
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -88,6 +79,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity,AddBestPhotos::class.java)
             startActivity(intent)
         }
+
+
+//        //Added button to open and test Inbox activity in device/emulator, will delete once the section is complete
+//        findViewById<Button>(R.id.open_chat).setOnClickListener {
+//            Intent(this, Chat::class.java).also {
+//                startActivity(it)
+//            }
+//        }
 
     }
 

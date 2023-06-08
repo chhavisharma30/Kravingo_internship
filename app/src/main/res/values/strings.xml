@@ -8,7 +8,6 @@
     <string name="Gender">Gender</string>
     <string name="gender">Gender</string>
     <string-array name="gender_options">
-        <item>Gender</item>
         <item>Male</item>
         <item>Female</item>
         <item>Other</item>

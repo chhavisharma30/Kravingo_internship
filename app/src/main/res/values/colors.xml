@@ -13,4 +13,5 @@
     <color name="transparent">@android:color/transparent</color>
     <color name="cherry">#FD788C</color>
     <color name="hint_color">#999999</color>
+    <color name ="Watermelon">#FF4D67</color>
 </resources>

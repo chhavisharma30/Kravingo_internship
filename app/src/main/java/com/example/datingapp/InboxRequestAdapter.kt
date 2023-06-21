@@ -17,6 +17,8 @@ class InboxRequestAdapter(private val requestList : ArrayList<MatchModel>, priva
 
             fun bindData(requestDetails : MatchModel) {
                 requestName.text = requestDetails.userName
+
+                // TODO: use Glide to set image from URL later
                 if (requestDetails.userProfilePicture != null) {
                     requestProfilePicture.setImageResource(requestDetails.userProfilePicture)
                 }

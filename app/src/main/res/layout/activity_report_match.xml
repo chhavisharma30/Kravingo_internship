@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:padding="16dp"
+    tools:context=".ReportMatchActivity">
+
+    <TextView
+    android:id="@+id/report_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Report Chat"
+    android:textAlignment="center"
+    android:textColor="?attr/colorOnSecondary"
+    android:textSize="30sp"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:textCursorDrawable="@null"
+        android:gravity="start"
+        android:hint="Description..."
+        android:id="@+id/report_description"
+        android:layout_width="match_parent"
+        android:minHeight="300dp"
+        android:maxHeight="450dp"
+        android:maxLength="850"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/report_input_bg"
+        android:padding="15dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/report_header"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/report_description"
+        app:layout_constraintBottom_toTopOf="@id/send_report_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/report_input_bg"
+        android:padding="20dp"
+        android:layout_marginVertical="15dp"
+        android:gravity="center">
+
+        <ImageView
+            android:elevation="1dp"
+            android:id="@+id/report_image_reemove_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorOnPrimary"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="invisible"/>
+
+        <ImageView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/report_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/report_image"
+            />
+        <TextView
+            android:id="@+id/attach_ss_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please attach screenshot of message if needed"
+            app:layout_constraintTop_toBottomOf="@id/report_image"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/send_report_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/custom_btn_2"
+        android:layout_marginTop="20dp"
+        android:letterSpacing="0.0"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        android:paddingHorizontal="65dp"
+        android:text="Send Report"
+        android:textAllCaps="false"
+        android:textColor="@drawable/btn_text_color_2"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:backgroundTintMode="add" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

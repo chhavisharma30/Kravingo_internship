@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/options_dialog_bg"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/options_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="If you don't want this person to message you"
+        android:textAlignment="center"
+        android:textColor="?attr/colorOnSecondary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/options_header">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/block_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_btn"
+            android:letterSpacing="0.0"
+            android:outlineSpotShadowColor="@android:color/transparent"
+            android:paddingHorizontal="45dp"
+            android:text="Block"
+            android:textAllCaps="false"
+            android:textColor="@drawable/btn_text_color"
+            app:backgroundTint="@null"
+            app:backgroundTintMode="add" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/report_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/custom_btn"
+            android:letterSpacing="0.0"
+            android:outlineSpotShadowColor="@android:color/transparent"
+            android:paddingHorizontal="65dp"
+            android:text="Report"
+            android:textAllCaps="false"
+            android:textColor="@drawable/btn_text_color"
+            app:backgroundTint="@null"
+            app:backgroundTintMode="add" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

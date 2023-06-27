@@ -38,8 +38,9 @@ class InboxAdapter(private val matchList : ArrayList<MatchModel>, private val co
                     val position = adapterPosition
                     val intent = Intent(context, Chat::class.java)
                     val matchName = matchList[position].userName
-                    // TODO: Might want to add userID to this later on
+                    val matchID = matchList[position].userID
                     intent.putExtra("MATCH_NAME", matchName)
+                    intent.putExtra("MATCH_ID", matchID)
                     context.startActivity(intent)
                     }
                 }

@@ -2,7 +2,6 @@ package com.example.datingapp
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.content.res.Resources
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.datingapp.utils.dpToPx
 
 class ChatAdapter(
     private val messageList: ArrayList<MessageModel>,
@@ -30,12 +30,6 @@ class ChatAdapter(
         val messageLayout : ConstraintLayout = itemView.findViewById(R.id.message_const_layout)
         val messageTextBox: ConstraintLayout = itemView.findViewById(R.id.message_textbox)
 
-
-        fun dpToPx(dp: Int): Int {
-            val scale = Resources.getSystem().displayMetrics.density
-            return (dp * scale + 0.5f).toInt()
-        }
-
         //Method to bind message data to the view
         abstract fun bindData(message: MessageModel)
 
@@ -53,17 +47,17 @@ class ChatAdapter(
         }
 
         override fun setUpMessageBoxStyle() {
-            messageLayout.setPadding(dpToPx(50), dpToPx(5), 0,dpToPx(5))
+            messageLayout.setPadding(dpToPx(context, 50f), dpToPx(context, 5f), 0,dpToPx(context, 5f))
             messageContent.setTextColor(ContextCompat.getColor(context, R.color.white))
 
             messageTimeStamp.setTextColor(ContextCompat.getColor(context, R.color.white))
             messageTextBox.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.cherry))
             val backgroundDrawable : GradientDrawable = messageTextBox.background as GradientDrawable
             backgroundDrawable.cornerRadii = floatArrayOf(
-                dpToPx(10).toFloat() ,dpToPx(10).toFloat(),
+                dpToPx(context, 10f).toFloat() ,dpToPx(context, 10f).toFloat(),
                 0f, 0f,
-                dpToPx(10).toFloat() ,dpToPx(10).toFloat(),
-                dpToPx(10).toFloat() ,dpToPx(10).toFloat()
+                dpToPx(context, 10f).toFloat() ,dpToPx(context, 10f).toFloat(),
+                dpToPx(context, 10f).toFloat() ,dpToPx(context, 10f).toFloat()
             )
             messageTextBox.background = backgroundDrawable
 
@@ -99,14 +93,14 @@ class ChatAdapter(
         override fun setUpMessageBoxStyle() {
             messageContent.setTextColor(ContextCompat.getColor(context, R.color.black))
             messageTimeStamp.setTextColor(ContextCompat.getColor(context, R.color.black))
-            messageLayout.setPadding(0,dpToPx(5), dpToPx(50),dpToPx(5))
+            messageLayout.setPadding(0,dpToPx(context, 5f), dpToPx(context, 50f),dpToPx(context, 5f))
             messageTextBox.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.hint_color))
             val backgroundDrawable : GradientDrawable = messageTextBox.background as GradientDrawable
             backgroundDrawable.cornerRadii = floatArrayOf(
                 0f, 0f,
-                dpToPx(10).toFloat() ,dpToPx(10).toFloat(),
-                dpToPx(10).toFloat() ,dpToPx(10).toFloat(),
-                dpToPx(10).toFloat() ,dpToPx(10).toFloat()
+                dpToPx(context, 10f).toFloat() ,dpToPx(context, 10f).toFloat(),
+                dpToPx(context, 10f).toFloat() ,dpToPx(context,10f).toFloat(),
+                dpToPx(context, 10f).toFloat() ,dpToPx(context, 10f).toFloat()
             )
             messageTextBox.background = backgroundDrawable
         }

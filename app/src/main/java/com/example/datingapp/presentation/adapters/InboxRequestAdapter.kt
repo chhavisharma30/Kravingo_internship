@@ -1,21 +1,25 @@
-package com.example.datingapp
+package com.example.datingapp.presentation.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.datingapp.R
+import com.example.datingapp.domain.models.InboxMatchDetails
 
-class InboxRequestAdapter(private val requestList : ArrayList<MatchModel>, private val context : Context) :
+class InboxRequestAdapter() :
     RecyclerView.Adapter<InboxRequestAdapter.ViewHolder>() {
 
+    private var requestList =  listOf<InboxMatchDetails>()
+
+    //TODO : Implement this ViewHolder separately when data can be pulled from Match Section/API
         inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
             private val requestName: TextView = itemView.findViewById(R.id.requestNameTextView)
             private val requestProfilePicture : ImageView = itemView.findViewById(R.id.requestProfileImage)
 
-            fun bindData(requestDetails : MatchModel) {
+            fun bindData(requestDetails : InboxMatchDetails) {
                 requestName.text = requestDetails.userName
 
                 // TODO: use Glide to set image from URL later
@@ -36,5 +40,11 @@ class InboxRequestAdapter(private val requestList : ArrayList<MatchModel>, priva
     override fun getItemCount(): Int {
         return requestList.size
     }
+
+    fun setData(requests : List<InboxMatchDetails>) {
+        this.requestList = requests
+        notifyDataSetChanged()
+    }
+
 
 }

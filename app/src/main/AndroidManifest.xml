@@ -16,17 +16,17 @@
         android:theme="@style/Theme.DatingApp"
         tools:targetApi="31">
         <activity
-            android:name=".ReportMatchActivity"
+            android:name=".presentation.activities.ReportMatchActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Chat"
+            android:name=".presentation.activities.Chat"
             android:exported="false" />
         <activity
-            android:name=".Inbox"
+            android:name=".presentation.activities.Inbox"
             android:exported="false" />
         <activity
             android:name=".SelectYourInterest"

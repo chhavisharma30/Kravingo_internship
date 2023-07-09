@@ -1,4 +1,4 @@
-package com.example.datingapp
+package com.example.datingapp.presentation.activities
 
 import android.app.Dialog
 import android.content.Intent
@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.datingapp.R
 
 class ReportMatchActivity : AppCompatActivity() {
 
@@ -66,7 +67,7 @@ class ReportMatchActivity : AppCompatActivity() {
 
             //TODO : Might have to add an if else condition to show either a successful or failure dialog box depending on response from the server
 
-            val reportConfirmationDialog =  Dialog(this);
+            val reportConfirmationDialog =  Dialog(this)
 
             reportConfirmationDialog.apply {
                 requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -76,9 +77,9 @@ class ReportMatchActivity : AppCompatActivity() {
                     setLayout(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT
-                    );
-                    setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
-                    setGravity(Gravity.CENTER);
+                    )
+                    setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                    setGravity(Gravity.CENTER)
 
                     attributes?.windowAnimations = R.style.DialogAnimation
                 }

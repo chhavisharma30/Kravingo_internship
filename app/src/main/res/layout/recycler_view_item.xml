@@ -1,51 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="8dp">
 
     <!-- Profile Image -->
     <ImageView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/profileImageView"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/ic_blank_profile_picture_973460"
+        android:background="@drawable/circle_background"
         android:scaleType="centerCrop"
-        android:background="@drawable/circle_background" />
+        android:src="@drawable/ic_blank_profile_picture_973460" />
 
     <!-- Name -->
     <TextView
+        app:layout_constraintStart_toEndOf="@+id/profileImageView"
+        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/profileImageView"
         android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/profileImageView"
         android:text="John Doe"
-        android:textSize="16sp"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="16sp" />
 
     <!-- Latest Message -->
     <TextView
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/profileImageView"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
         android:id="@+id/latestMessageTextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/nameTextView"
-        android:layout_toEndOf="@id/profileImageView"
         android:layout_marginTop="4dp"
         android:text="Hello, how are you?"
-        android:textSize="14sp"
-        android:textColor="#808080" />
+        android:textColor="#808080"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/new_message_bubble"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_msg_bubble"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:text="NEW!"
+        android:textColor="@color/white"
+        />
 
     <!-- Timing -->
     <TextView
+        app:layout_constraintStart_toEndOf="@id/profileImageView"
+        app:layout_constraintTop_toBottomOf="@id/latestMessageTextView"
         android:id="@+id/timingTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/latestMessageTextView"
+        android:layout_marginStart="8dp"
         android:layout_toEndOf="@id/profileImageView"
-        android:layout_alignParentBottom="true"
-        android:text="2:30 PM"
-        android:textSize="12sp"
-        android:textColor="#808080" />
+        android:text=""
+        android:textColor="#808080"
+        android:textSize="12sp" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

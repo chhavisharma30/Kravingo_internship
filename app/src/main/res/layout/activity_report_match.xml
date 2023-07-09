@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:padding="16dp"
-    tools:context=".ReportMatchActivity">
+    tools:context=".presentation.activities.ReportMatchActivity">
 
     <TextView
     android:id="@+id/report_header"

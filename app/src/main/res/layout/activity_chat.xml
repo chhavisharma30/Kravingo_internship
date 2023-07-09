@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:padding="16dp"
     android:layout_height="match_parent"
-    tools:context=".Chat">
+    tools:context=".presentation.activities.Chat">
 
     <TextView
         android:id="@+id/textView12"
@@ -86,16 +86,91 @@
         android:padding="5dp"
         />
 
+    <!--    Test Button to add sender Message in UI-->
+<!--    <Button-->
+<!--        android:id="@+id/test_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Add SNDMSG"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"/>-->
 
-    <com.google.android.material.textfield.TextInputEditText
+    <!--    Test Button to add receiver Message in UI-->
+<!--    <Button-->
+<!--        android:id="@+id/test_btn2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Add RCVMSG"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/textInputEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chat_view">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/send_message_edit_text"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/send_msg_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Message..."
         android:background="@drawable/edit_text_border_2"
         android:padding="10dp"
-        android:drawableEnd="@drawable/ic_round_send_24"
-        android:drawableTint="@color/cherry"
+         />
+        <com.google.android.material.button.MaterialButton
+            android:enabled="false"
+            android:layout_marginStart="10dp"
+            android:id="@+id/send_msg_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/send_message_edit_text"
+            app:layout_constraintBottom_toBottomOf="@id/send_message_edit_text"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:rippleColor="@color/black"
+            android:adjustViewBounds="true"
+            android:background="@drawable/send_msg_btn"
+            android:backgroundTint="@null"
+            android:scaleType="fitCenter" />
 
-        app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/new_msg_notification"
+        android:visibility="invisible"
+        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/chat_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_msg_bubble"
+        android:backgroundTint="@color/black"
+        android:textColor="?attr/colorPrimary"
+        android:shadowColor="@color/black"
+        android:shadowRadius="@android:integer/config_mediumAnimTime"
+        android:outlineAmbientShadowColor="@color/black"
+        android:outlineSpotShadowColor="@color/black"
+        android:text="New messages below!"/>
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/floating_msg_date_signifier"
+        android:paddingHorizontal="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white"
+        android:background="@drawable/new_msg_bubble"
+        app:layout_constraintStart_toStartOf="@id/chat_view"
+        app:layout_constraintEnd_toEndOf="@id/chat_view"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="@id/chat_view"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
